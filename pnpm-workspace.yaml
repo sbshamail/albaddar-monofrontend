@@ -1,0 +1,7 @@
+packages:
+  - admin
+  - frontend
+  - shared
+allowBuilds:
+  sharp: false
+  unrs-resolver: false

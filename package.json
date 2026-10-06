@@ -1,0 +1,14 @@
+{
+  "name": "monofrontend",
+  "private": true,
+  "scripts": {
+    "gitpush": "git add . && git commit -m 'update' && git push",
+    "dev:admin": "pnpm --filter admin run dev",
+    "dev:frontend": "pnpm --filter frontend run dev",
+    "build:admin": "pnpm --filter admin run build",
+    "build:frontend": "pnpm --filter frontend run build",
+    "lint:admin": "pnpm --filter admin run lint",
+    "lint:frontend": "pnpm --filter frontend run lint",
+    "add": "bash scripts/add-shared-ui.sh"
+  }
+}
