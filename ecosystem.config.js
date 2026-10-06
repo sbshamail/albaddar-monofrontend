@@ -32,7 +32,7 @@ module.exports = {
       max_memory_restart: "500M",
 
       env: {
-        PORT: "3001",
+        PORT: "3011",
         NODE_ENV: "production",
         BACKEND_API_URL: "https://albaddarapi.buyagain.pk/api",
       },
@@ -58,7 +58,7 @@ module.exports = {
       max_memory_restart: "500M",
 
       env: {
-        PORT: "3000",
+        PORT: "3012",
         NODE_ENV: "production",
         BACKEND_API_URL: "https://albaddarapi.buyagain.pk/api",
       },
