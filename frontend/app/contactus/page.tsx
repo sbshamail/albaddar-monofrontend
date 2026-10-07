@@ -22,7 +22,7 @@ import {
 } from "@deep-ecommerce/shared/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "Contact Us — AlBaddar",
+  title: "Contact Us — AlBadar",
   description: `Reach ${siteConfig.name} on WhatsApp — questions, feedback, or help with an order.`,
 };
 

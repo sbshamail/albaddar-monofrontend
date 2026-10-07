@@ -31,9 +31,9 @@ import {
 import logo from "../../../shared/public/images/logo.jpeg";
 
 export const metadata: Metadata = {
-  title: "About Al Baddar Organic",
+  title: "About Al Badar Organic",
   description:
-    "Discover the three-generation family story behind Al Baddar Organic, from a neighborhood milk shop to a family-run shopping center and nutrition-focused grocery products.",
+    "Discover the three-generation family story behind Al Badar Organic, from a neighborhood milk shop to a family-run shopping center and nutrition-focused grocery products.",
 };
 
 const CATEGORIES = [
@@ -65,7 +65,7 @@ const TIMELINE = [
   },
   {
     year: "Today",
-    title: "Introducing Al Baddar Organic online",
+    title: "Introducing Al Badar Organic online",
     text: "We recently added nutrition-focused products to our grocery store. Now we are bringing our wholesome flours, protein-rich foods, and nutrient-rich essentials to more homes online.",
   },
 ];
@@ -77,13 +77,13 @@ export default function AboutPage() {
       <section className="flex flex-col items-center gap-4 text-center">
         <Image
           src={logo}
-          alt="AlBaddar logo"
+          alt="AlBadar logo"
           width={72}
           height={72}
           className="rounded-lg"
         />
         <h1 className="bg-linear-to-r from-primary to-chart-2 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent md:text-4xl">
-          Al Baddar Organic
+          Al Badar Organic
         </h1>
         <p className="max-w-xl text-muted-foreground">
           A family business rooted in Pakistan, grown over three generations,
@@ -118,11 +118,11 @@ export default function AboutPage() {
         </ol>
       </section>
 
-      {/* Al Baddar Organic products */}
+      {/* Al Badar Organic products */}
       <section className="flex flex-col gap-6">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground">
-            Al Baddar Organic
+            Al Badar Organic
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             A thoughtfully selected range of nourishing grocery essentials, now
@@ -253,7 +253,7 @@ export default function AboutPage() {
           <a
             href={buildWhatsAppLink(
               CONTACTS[0].phone,
-              "Hi! I have a question about Al Baddar Organic.",
+              "Hi! I have a question about Al Badar Organic.",
             )}
             target="_blank"
             rel="noopener noreferrer"

@@ -18,7 +18,7 @@ export interface Contact {
 // Calls aren't answered — every contact here is WhatsApp-only, by design
 // (see the About/Contact pages).
 export const CONTACTS: Contact[] = [
-  { name: "Muhammad Baddar", phone: "03359602482" },
+  { name: "Muhammad Badar", phone: "03359602482" },
 ];
 
 export const STORE_LOCATION_URL = "https://share.google/dpslDD9trMSArJfR8";

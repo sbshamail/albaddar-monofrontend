@@ -13,7 +13,7 @@ const path = require("path");
 module.exports = {
   apps: [
     {
-      name: "albaddar-admin-prod",
+      name: "albadar-admin-prod",
       script: "pnpm",
       args: "start",
       interpreter: "none",
@@ -34,7 +34,7 @@ module.exports = {
       env: {
         PORT: "3011",
         NODE_ENV: "production",
-        BACKEND_API_URL: "https://albaddarapi.buyagain.pk/api",
+        BACKEND_API_URL: "https://albadarapi.buyagain.pk/api",
       },
 
       out_file: "./logs/admin-prod-out.log",
@@ -44,7 +44,7 @@ module.exports = {
     },
 
     {
-      name: "albaddar-frontend-prod",
+      name: "albadar-frontend-prod",
       script: "pnpm",
       args: "start",
       interpreter: "none",
@@ -60,11 +60,11 @@ module.exports = {
       env: {
         PORT: "3012",
         NODE_ENV: "production",
-        BACKEND_API_URL: "https://albaddarapi.buyagain.pk/api",
+        BACKEND_API_URL: "https://albadarapi.buyagain.pk/api",
       },
 
-      out_file: "./logs/albaddar-frontend-prod-out.log",
-      error_file: "./logs/albaddar-frontend-prod-error.log",
+      out_file: "./logs/albadar-frontend-prod-out.log",
+      error_file: "./logs/albadar-frontend-prod-error.log",
       merge_logs: true,
       time: true,
     },

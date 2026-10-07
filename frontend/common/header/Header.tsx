@@ -46,7 +46,7 @@ export default function Header({
           href="/"
           className="flex shrink-0 items-center gap-2 rounded-t-full rounded-y-4xl inset-shadow-xs inset-shadow-primary shadow shadow-primary bg-white  transition-all hover:scale-105 hover:shadow-lg  "
         >
-          <Image src={logo} width={70} height={70} alt="AlBaddar logo" />
+          <Image src={logo} width={70} height={70} alt="AlBadar logo" />
         </Link>
 
         <div className="hidden md:block">
@@ -118,7 +118,7 @@ export default function Header({
         </Button>
 
         <Link href="/" className="flex shrink-0 items-center">
-          <Image src={logo} width={40} height={40} alt="AlBaddar logo" />
+          <Image src={logo} width={40} height={40} alt="AlBadar logo" />
         </Link>
 
         <Button

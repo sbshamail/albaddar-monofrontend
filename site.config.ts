@@ -10,14 +10,14 @@
 // Imported as "@site-config" (tsconfig paths in each app); next.config.ts
 // can't use tsconfig paths, so it imports "../site.config" directly.
 
-const url = "https://albaddar.buyagain.pk";
+const url = "https://albadar.buyagain.pk";
 const host = new URL(url).hostname;
 
 export const siteConfig = {
   /** Brand name — page titles, og:site_name, alt text, headings. */
-  name: "AlBaddar",
-  /** Brand as written in running copy ("We're back — as AlBaddar.buyagain.pk"). */
-  displayDomain: "AlBaddar.buyagain.pk",
+  name: "AlBadar",
+  /** Brand as written in running copy ("We're back — as AlBadar.buyagain.pk"). */
+  displayDomain: "AlBadar.buyagain.pk",
   /** Canonical production origin — metadataBase, sitemap, absolute URLs. */
   url,
   tagline: "Buy once, love it, buy again.",
@@ -29,7 +29,7 @@ export const siteConfig = {
   devOrigins: [`test.${host}`, host],
   /** Prefix for localStorage keys, so two sites on one browser never clash.
    * Changing it orphans anything users already have stored (e.g. guest cart). */
-  storagePrefix: "albaddar",
+  storagePrefix: "albadar",
 };
 
 // Descriptive, not keyword-stuffed: "<product> - <brand>". Google Images uses
