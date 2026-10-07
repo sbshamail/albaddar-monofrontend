@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@deep-ecommerce/shared/*": ["../shared/*"]
+      "@deep-ecommerce/shared/*": ["../shared/*"],
+      "@site-config": ["../site.config.ts"]
     }
   },
   "include": [

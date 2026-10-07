@@ -1,6 +1,7 @@
 import CartProvider from "@/common/cart/CartProvider";
 import { getCategoryTree } from "@/common/data/categories";
 import SiteChrome from "@/common/layout/SiteChrome";
+import { siteConfig } from "@site-config";
 import AuthProvider from "@/providers/auth/authContext";
 import { getCurrentUser } from "@/providers/auth/session";
 import { TooltipProvider } from "@deep-ecommerce/shared/components/ui/tooltip";
@@ -22,15 +23,14 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 // (including the file-convention opengraph-image.jpg/twitter-image.jpg) to
 // an absolute URL — link-preview crawlers (WhatsApp, Facebook, Twitter/X)
 // need an absolute URL, they won't resolve a relative one themselves.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Albaddar — Buy once, love it, buy again.",
-    template: "%s | Albaddar",
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: "Shop across every category in one place.",
+  description: siteConfig.description,
   // No `images` here on purpose — the opengraph-image.jpg/twitter-image.jpg
   // files in this same app/ directory are Next's file-based convention for
   // that; they apply automatically to every route that doesn't override
@@ -38,18 +38,16 @@ export const metadata: Metadata = {
   // generateMetadata instead). A static pre-rendered file costs nothing at
   // request time, unlike generating an image on every share.
   openGraph: {
-    siteName: "Albaddar",
-    title: "Albaddar — Buy once, love it, buy again.",
-    description: "Shop across every category in one place.",
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
     type: "website",
-    locale: "en_PK",
-    images: ["../../shared/public/images/logo.jpeg"],
+    locale: siteConfig.locale,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Albaddar — Buy once, love it, buy again.",
-    description: "Shop across every category in one place.",
-    images: ["../../shared/public/images/logo.jpeg"],
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
   },
 };
 

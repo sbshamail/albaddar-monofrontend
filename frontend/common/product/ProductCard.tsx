@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Badge } from "@deep-ecommerce/shared/components/ui/badge";
 import { Button } from "@deep-ecommerce/shared/components/ui/button";
 import { ProductRead } from "@deep-ecommerce/shared/types/product_types";
-import { productImageAlt } from "../seo/site";
+import { productImageAlt } from "@site-config";
 import { formatPrice, getDisplayPrice } from "./priceHelpers";
 
 export default function ProductCard({ product }: { product: ProductRead }) {

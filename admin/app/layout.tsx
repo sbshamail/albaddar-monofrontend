@@ -8,6 +8,7 @@ import {
   THEME_COOKIE,
 } from "@deep-ecommerce/shared/providers/theme/config";
 import ThemeProvider from "@deep-ecommerce/shared/providers/theme/themeContext";
+import { siteConfig } from "@site-config";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
@@ -16,7 +17,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Buy Again",
+  title: siteConfig.name,
   // description: "Ecommerce admin dashboard",
 };
 

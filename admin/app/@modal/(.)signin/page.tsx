@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Suspense } from "react";
 
+import AuthLink from "@/components/auth/AuthLink";
 import AuthModal from "@/components/auth/AuthModal";
 import SigninForm from "@/common/form/SigninForm";
 
@@ -12,9 +12,9 @@ export default function SigninModal() {
       footer={
         <>
           Don&apos;t have an account?{" "}
-          <Link href="/register" className="text-primary hover:underline">
+          <AuthLink href="/register" className="text-primary hover:underline">
             Create one
-          </Link>
+          </AuthLink>
         </>
       }
     >

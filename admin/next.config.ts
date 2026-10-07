@@ -2,6 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import type { NextConfig } from "next";
 
+import { siteConfig } from "../site.config";
+
 // This app has no .env* of its own — the workspace shares root-level
 // .env/.env.local files (monofrontend/.env, monofrontend/.env.local) for
 // both admin and frontend, since they talk to the same backend. Next's own
@@ -23,7 +25,7 @@ if (typeof process.loadEnvFile === "function") {
 
 const nextConfig: NextConfig = {
   /* config options here */
-  allowedDevOrigins: ["test.buyagain.pk", "buyagain.pk"],
+  allowedDevOrigins: siteConfig.devOrigins,
   // Workspace package is plain TS/TSX source, not pre-built — this tells
   // Next to run its normal transform on it instead of treating it as
   // opaque, already-compiled node_modules code.

@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["./*"],
       "@deep-ecommerce/shared/*": ["../shared/*"],
+      "@site-config": ["../site.config.ts"],
       "zod": ["../node_modules/zod"],
       "zod/*": ["../node_modules/zod/*"]
     }

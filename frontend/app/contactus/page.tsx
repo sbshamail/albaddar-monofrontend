@@ -1,3 +1,4 @@
+import { siteConfig } from "@site-config";
 import { MapPin, PhoneOff, ShoppingBag } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -22,8 +23,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Contact Us — AlBaddar",
-  description:
-    "Reach AlBaddar on WhatsApp — questions, feedback, or help with an order.",
+  description: `Reach ${siteConfig.name} on WhatsApp — questions, feedback, or help with an order.`,
 };
 
 export default function ContactUsPage() {

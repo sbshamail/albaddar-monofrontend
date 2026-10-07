@@ -79,7 +79,7 @@ const SigninForm = () => {
                 <FormLabel>Password</FormLabel>
                 <Link
                   href="/forgot-password"
-                  className="text-xs text-muted-foreground hover:text-foreground"
+                  className="text-xs text-primary hover:underline"
                 >
                   Forgot password?
                 </Link>

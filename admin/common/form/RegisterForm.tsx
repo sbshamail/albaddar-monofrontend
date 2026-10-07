@@ -1,9 +1,10 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
+import { MailCheck } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import AuthLink from "@/components/auth/AuthLink";
 import PasswordInput from "@/components/auth/PasswordInput";
 import { Button } from "@deep-ecommerce/shared/components/ui/button";
 import {
@@ -62,11 +63,12 @@ const RegisterForm = () => {
 
   if (successMessage) {
     return (
-      <div className="space-y-4 text-sm">
-        <p className="text-foreground">{successMessage}</p>
-        <Link href="/signin" className="text-primary hover:underline">
-          Back to sign in
-        </Link>
+      <div className="space-y-4 text-center">
+        <MailCheck className="mx-auto size-10 text-primary" />
+        <p className="text-sm text-foreground">{successMessage}</p>
+        <Button asChild className="w-full">
+          <AuthLink href="/signin">Back to sign in</AuthLink>
+        </Button>
       </div>
     );
   }
@@ -116,7 +118,7 @@ const RegisterForm = () => {
           )}
         />
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="password"
@@ -146,7 +148,11 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <p className="pt-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+          Region &amp; currency
+        </p>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="country"
@@ -176,7 +182,7 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="currency_code"

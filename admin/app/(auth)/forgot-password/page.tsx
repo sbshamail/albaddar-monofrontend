@@ -1,24 +1,23 @@
 
-import RegisterForm from "@/common/form/RegisterForm";
+import ForgotPasswordForm from "@/common/form/ForgotPasswordForm";
 import AuthLink from "@/components/auth/AuthLink";
 import AuthCard from "@/components/auth/AuthCard";
 
-export default function RegisterPage() {
+export default function ForgotPasswordPage() {
   return (
     <AuthCard
-      size="wide"
-      title="Create an account"
-      description="Fill in your details to get started"
+      title="Forgot your password?"
+      description="We'll email you a 6-digit code to reset it"
       footer={
         <>
-          Already have an account?{" "}
+          Remembered it?{" "}
           <AuthLink href="/signin" className="text-primary hover:underline">
-            Sign in
+            Back to sign in
           </AuthLink>
         </>
       }
     >
-      <RegisterForm />
+      <ForgotPasswordForm />
     </AuthCard>
   );
 }

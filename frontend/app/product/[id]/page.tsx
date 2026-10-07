@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getProduct } from "@/common/data/products";
 import { formatPrice } from "@/common/product/priceHelpers";
 import ProductDetailContent from "@/common/product/ProductDetailContent";
-import { SITE_NAME, SITE_URL } from "@/common/seo/site";
+import { siteConfig } from "@site-config";
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -20,12 +20,8 @@ function toPlainDescription(product: {
   min_price: number | null;
 }): string {
   if (product.short_description) return product.short_description;
-  const stripped = product.description
-    ?.replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  if (stripped)
-    return stripped.length > 160 ? `${stripped.slice(0, 157)}...` : stripped;
+  const stripped = product.description?.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  if (stripped) return stripped.length > 160 ? `${stripped.slice(0, 157)}...` : stripped;
   return `${formatPrice(product.min_price ?? 0)} — shop now.`;
 }
 
@@ -34,9 +30,7 @@ function toPlainDescription(product: {
 // itself into a rich link preview (title/description/image), which is
 // exactly what these Open Graph tags are for. No metadata here = the
 // WhatsApp order message linking to this page shows as bare text.
-export async function generateMetadata({
-  params,
-}: ProductPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const { id } = await params;
   const productId = Number(id);
   if (!Number.isInteger(productId)) return {};
@@ -55,12 +49,7 @@ export async function generateMetadata({
   // once this segment already returns its own openGraph object.
   const ogImage = image
     ? { url: image, width: 1200, height: 1200, alt: product.name }
-    : {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AlBaddar",
-      };
+    : { url: "/opengraph-image.png", width: 1200, height: 630, alt: siteConfig.name };
 
   return {
     title: product.name,
@@ -102,8 +91,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
     description: toPlainDescription(product),
     image: images,
     sku: product.variants?.[0]?.sku ?? undefined,
-    url: `${SITE_URL}/product/${product.id}`,
-    brand: { "@type": "Brand", name: product.shop?.name ?? SITE_NAME },
+    url: `${siteConfig.url}/product/${product.id}`,
+    brand: { "@type": "Brand", name: product.shop?.name ?? siteConfig.name },
     offers: offerPrices.length
       ? {
           "@type": "AggregateOffer",

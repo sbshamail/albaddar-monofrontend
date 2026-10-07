@@ -8,6 +8,7 @@ import {
   YOUTUBE_CHANNEL_URL,
   buildWhatsAppLink,
 } from "@/common/data/shopInfo";
+import { siteConfig } from "@site-config";
 import YoutubeIcon from "@/common/icons/YoutubeIcon";
 import WhatsAppIcon from "@/common/whatsapp/WhatsAppIcon";
 
@@ -21,18 +22,15 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-8 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
         <div className="flex flex-col items-center gap-1 sm:items-start">
           <span className="bg-linear-to-r from-primary to-chart-2 bg-clip-text text-lg font-extrabold tracking-tight text-transparent">
-            AlBaddar
+            {siteConfig.name}
           </span>
           <p className="max-w-xs text-sm text-muted-foreground">
-            A family business, Buy once, love it, buy again.
+            A family business. {siteConfig.tagline}
           </p>
         </div>
 
         <nav className="flex flex-wrap justify-center gap-x-4 gap-y-3 text-sm sm:justify-start sm:gap-x-6 sm:gap-y-2">
-          <Link
-            href="/about"
-            className="text-muted-foreground hover:text-foreground"
-          >
+          <Link href="/about" className="text-muted-foreground hover:text-foreground">
             About us
           </Link>
           <Link
@@ -81,7 +79,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-border px-4 py-3 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} AlBaddar.buyagain.pk — All rights reserved.
+        © {new Date().getFullYear()} {siteConfig.displayDomain} — All rights reserved.
       </div>
     </footer>
   );

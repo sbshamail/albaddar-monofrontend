@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { Suspense } from "react";
 
 import SigninForm from "@/common/form/SigninForm";
 import AuthCard from "@/components/auth/AuthCard";
+import AuthLink from "@/components/auth/AuthLink";
 
 export default function SigninPage() {
   return (
@@ -12,9 +12,9 @@ export default function SigninPage() {
       footer={
         <>
           Don&apos;t have an account?{" "}
-          <Link href="/register" className="text-primary hover:underline">
+          <AuthLink href="/register" className="text-primary hover:underline">
             Create one
-          </Link>
+          </AuthLink>
         </>
       }
     >

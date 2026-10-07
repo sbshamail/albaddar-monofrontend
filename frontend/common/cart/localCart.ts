@@ -1,11 +1,12 @@
 import { CartData } from "@/common/data/cart.client";
+import { siteConfig } from "@site-config";
 
 // Guest (signed-out) cart — held entirely client-side, same CartData[] shape
 // the backend-mirrored cart uses (see cartMath.ts), so CartProvider can
 // apply the exact same add/update/remove math to either one. Never touches
 // the backend; only ever merged into a real account cart on sign-in (see
 // CartProvider's mergeLocalCartIntoAccount).
-const STORAGE_KEY = "albaddar_guest_cart";
+const STORAGE_KEY = `${siteConfig.storagePrefix}_guest_cart`;
 
 export function readLocalCart(): CartData[] {
   if (typeof window === "undefined") return [];
